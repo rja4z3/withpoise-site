@@ -1,0 +1,214 @@
+/* withpoise.app — one stylesheet for every page. Light only, like the app. */
+:root {
+  --cream: #F9F4EA;
+  --cream-mid: #EDF2E7;
+  --mint-wash: #D5E7DC;
+  --ink: #26302B;
+  --ink-mid: #4A6366;
+  --ink-faint: #7E9192;
+  --evergreen: #3E5C50;
+  --moss: #5A8472;
+  --mint: #B8D9C5;
+  --sage: #7A9E9F;
+  --clay: #8E5F49;
+  --line: #D8D2C9;
+  --line-light: #E4E8E0;
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--mint-wash); color-scheme: light; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100svh;
+  background: linear-gradient(180deg, var(--cream) 0%, var(--cream-mid) 50%, var(--mint-wash) 100%);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+/* The arrival glow: the app's soft dome behind the mark, cool with a little warmth. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 70vh;
+  pointer-events: none;
+  background:
+    radial-gradient(60% 45% at 50% 18%, rgba(122,158,159,0.16), rgba(184,217,197,0.12) 45%, rgba(184,217,197,0) 75%),
+    radial-gradient(45% 30% at 50% 10%, rgba(232,190,150,0.14), rgba(232,190,150,0) 70%);
+}
+
+.page {
+  position: relative;
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 3.5rem 1rem 3rem;
+}
+@media (min-width: 700px) { .page { padding: 5rem 1.5rem 4rem; } }
+
+a { color: var(--evergreen); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; border-radius: 2px; }
+
+/* Lockup: mark, wordmark, tagline. Same parts and proportions as the app's splash. */
+.lockup {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-decoration: none;
+  color: inherit;
+}
+.lockup .mark { width: 60px; height: auto; display: block; }
+.lockup .wordmark {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  margin-top: 0.9rem;
+  color: var(--ink);
+}
+.lockup .tagline {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-top: 0.7rem;
+}
+.lockup.small { flex-direction: row; gap: 0.6rem; align-items: center; }
+.lockup.small .mark { width: 34px; }
+.lockup.small .wordmark { font-size: 1.35rem; margin: 0; }
+
+/* Home */
+.hero { text-align: center; }
+.hero h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2rem, 7.5vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  margin: 2.6rem 0 0;
+  text-wrap: balance;
+}
+.hero .lede {
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--ink-mid);
+  max-width: 32rem;
+  margin: 1.1rem auto 0;
+  text-wrap: pretty;
+}
+.hero .soon {
+  display: inline-block;
+  margin: 1.9rem 0 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--clay);
+}
+.hero .soon::before {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 1px;
+  background: var(--clay);
+  opacity: 0.55;
+  margin: 0 auto 0.85rem;
+}
+.hero .badge { display: inline-block; margin-top: 1.9rem; }
+.hero .badge img { height: 44px; width: auto; display: block; }
+
+.beats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem 2.5rem;
+  margin: 3.75rem auto 0;
+  max-width: 38rem;
+}
+@media (min-width: 640px) { .beats { grid-template-columns: 1fr 1fr; gap: 2.1rem 2.75rem; margin-top: 4.5rem; } }
+.beat h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.35rem;
+  line-height: 1.25;
+  margin: 0 0 0.35rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.beat h2::before {
+  content: "";
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--dot, var(--sage));
+  flex: none;
+}
+.beat.write { --dot: var(--mint); }
+.beat.reflect { --dot: var(--moss); }
+.beat.send { --dot: var(--evergreen); }
+.beat.refine { --dot: var(--clay); }
+.beat p { margin: 0; color: var(--ink-mid); font-size: 1rem; text-wrap: pretty; }
+
+.trial {
+  text-align: center;
+  margin: 3.25rem 0 0;
+  font-size: 0.95rem;
+  color: var(--ink-mid);
+}
+
+/* Plain pages: privacy, terms, support */
+.plain header { margin-bottom: 2.25rem; }
+.plain h1 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.8rem, 6vw, 2.4rem);
+  line-height: 1.15;
+  margin: 1.75rem 0 0.4rem;
+  text-wrap: balance;
+}
+.plain .updated { margin: 0 0 1.75rem; color: var(--ink-faint); font-size: 0.9rem; }
+.plain .note { color: var(--ink-mid); font-size: 1rem; margin: 0 0 1.5rem; }
+.plain h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  margin: 2rem 0 0.5rem;
+}
+.plain p, .plain li { color: var(--ink); font-size: 1rem; }
+.plain p { margin: 0 0 0.9rem; text-wrap: pretty; }
+.plain ul, .plain ol { margin: 0 0 0.9rem; padding-left: 1.25rem; }
+.plain li { margin: 0 0 0.45rem; }
+.plain li::marker { color: var(--ink-faint); }
+.plain .contact { margin-top: 1rem; }
+
+/* Footer */
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--line-light);
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-mid);
+}
+footer nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem 1.75rem; margin-bottom: 0.75rem; }
+footer nav a { color: var(--evergreen); text-decoration: none; }
+footer nav a:hover { text-decoration: underline; }
+footer p { margin: 0; font-size: 0.85rem; color: var(--ink-faint); }
+footer p a { color: inherit; text-decoration: none; }
+
+/* The splash's breath: the hero fades in once. Off for anyone who asked for less motion. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero > * { animation: rise 0.9s ease-out both; }
+  .hero > :nth-child(2) { animation-delay: 0.15s; }
+  .hero > :nth-child(3) { animation-delay: 0.3s; }
+  .hero > :nth-child(4) { animation-delay: 0.45s; }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+}
