@@ -194,8 +194,11 @@ body[data-cta="launch"] .cta-soon { display: none; }
 .beat-phone .shell { border-radius: 44px; padding: 8px; box-shadow: 0 40px 70px -36px rgba(20,26,23,0.45); }
 .beat-phone .screen { border-radius: 37px; }
 
-/* The Reflect screen as it opens in the app: only the dots, the halo and ‹ Edit. */
-.screen.reflect { background: linear-gradient(180deg, #F7F0E3 0%, #EFEEE3 45%, #DFE9E1 100%); }
+/* The Reflect screen as it opens in the app: only the dots, the halo and ‹ Edit.
+   Island, ‹ Edit and the trio are placed from an iPhone 18 Pro capture (Oct 15):
+   island 23–24% of the screen width at the top, ‹ Edit at 5.3% / 10.8%, the dots'
+   centre at 31.8% of the height, dots 3 / 4.5 / 6% of the width with a 3% gap. */
+.screen.reflect { background: linear-gradient(180deg, #F7F0E3 0%, #EFEEE3 45%, #DFE9E1 100%); container-type: inline-size; }
 .screen .glow {
   position: absolute;
   inset: 0 0 auto 0;
@@ -206,26 +209,26 @@ body[data-cta="launch"] .cta-soon { display: none; }
 }
 .screen .island {
   position: absolute;
-  top: 3.5%;
+  top: 1.6%;
   left: 50%;
   transform: translateX(-50%);
-  width: 33%;
-  aspect-ratio: 92 / 26;
+  width: 23.5%;
+  aspect-ratio: 284 / 110;
   border-radius: 999px;
   background: var(--shell);
 }
 .screen .back {
   position: absolute;
-  top: 9.8%;
-  left: 7.8%;
-  font-size: 13px;
+  top: 10.8%;
+  left: 5.3%;
+  font-size: 12px;
   color: var(--ink);
   display: flex;
   align-items: center;
   gap: 4px;
 }
 .screen .back .chev { font-size: 15px; line-height: 1; }
-.bloom { position: absolute; left: 0; right: 0; top: 24%; display: flex; justify-content: center; }
+.bloom { position: absolute; left: 0; right: 0; top: 15.4%; display: flex; justify-content: center; }
 .bloom-inner { position: relative; width: 71%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
 .halo {
   position: absolute;
@@ -238,11 +241,11 @@ body[data-cta="launch"] .cta-soon { display: none; }
   background: radial-gradient(circle, rgba(226,168,120,0.32) 0%, rgba(184,217,197,0.24) 45%, rgba(184,217,197,0) 68%);
   animation: poiseHalo 10s infinite;
 }
-.trio { position: relative; display: flex; align-items: center; gap: 10px; }
+.trio { position: relative; display: flex; align-items: center; gap: 3cqw; }
 .dot { display: block; border-radius: 50%; flex: none; animation: poiseBreath 10s infinite; }
-.dot.d1 { width: 10px; height: 10px; background: var(--mint); }
-.dot.d2 { width: 15px; height: 15px; background: var(--moss); animation-delay: 0.35s; }
-.dot.d3 { width: 20px; height: 20px; background: var(--evergreen); animation-delay: 0.7s; }
+.dot.d1 { width: 3cqw; height: 3cqw; background: var(--mint); }
+.dot.d2 { width: 4.5cqw; height: 4.5cqw; background: var(--moss); animation-delay: 0.35s; }
+.dot.d3 { width: 6cqw; height: 6cqw; background: var(--evergreen); animation-delay: 0.7s; }
 
 /* The breath, as the app's Reflect screen breathes (PoiseBreath): one 10-second
    cycle, rise to 40%, a caught breath to 44%, then a release that eases out.
