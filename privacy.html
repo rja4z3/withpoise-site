@@ -13,6 +13,29 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<!-- Visit counter: PostHog, the same project as the app. Page views only, no cookies, nothing stored on the visitor's device,
+     no session replay, no identifying. Runs only on withpoise.app, so previews and local copies send nothing. -->
+<script>
+if (location.hostname === "withpoise.app") {
+  var ph = document.createElement("script");
+  ph.src = "https://us-assets.i.posthog.com/static/array.js";
+  ph.async = true; ph.crossOrigin = "anonymous";
+  ph.onload = function () {
+    if (!window.posthog) return;
+    posthog.init("phc_zLYd7ntRUukfhqrRVsVskn5QcecLmwHqST4roXQSe6As", {
+      api_host: "https://us.i.posthog.com",
+      persistence: "memory",
+      person_profiles: "never",
+      autocapture: false,
+      capture_pageview: true,
+      capture_pageleave: false,
+      disable_session_recording: true,
+      disable_surveys: true
+    });
+  };
+  document.head.appendChild(ph);
+}
+</script>
 </head>
 <body>
 <main class="page plain">
