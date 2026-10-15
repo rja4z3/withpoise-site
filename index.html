@@ -15,59 +15,190 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F9F4EA">
+<!-- Launch day, step 6 in the README: Apple's "open in the App Store" strip in Safari. Needs the App Store ID.
+<meta name="apple-itunes-app" content="app-id=APPSTOREID">
+-->
 <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap">
 <link rel="stylesheet" href="style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Does Poise see my messages?", "acceptedAnswer": {"@type": "Answer", "text": "No. Poise has no accounts, and what you write stays on your phone."}},
+    {"@type": "Question", "name": "What about Refine?", "acceptedAnswer": {"@type": "Answer", "text": "Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The Privacy Policy has the details."}},
+    {"@type": "Question", "name": "Does it work in iMessage?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Poise sits under any conversation in iMessage, so you can write, reflect, and refine without leaving the thread. Everywhere else, Send passes your message to the app you're using."}},
+    {"@type": "Question", "name": "What happens after the trial?", "acceptedAnswer": {"@type": "Answer", "text": "The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime. Cancel at least a day before the trial ends and nothing is charged."}},
+    {"@type": "Question", "name": "Is Poise therapy?", "acceptedAnswer": {"@type": "Answer", "text": "No. Poise is a place to write and take a moment. It isn't therapy, counseling, or medical advice."}}
+  ]
+}
+</script>
+<!-- Visit counter, cookieless, no banner needed (Cloudflare Web Analytics). Paste the site token from the Cloudflare dashboard, then uncomment:
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "TOKEN"}'></script>
+-->
 </head>
-<body>
-<main class="page">
-  <header class="hero">
-    <a class="lockup" href="./" aria-label="Poise home">
+<!-- The one switch: data-cta="soon" before launch, data-cta="launch" on release day (README, Going live). -->
+<body class="home" data-cta="soon">
+<div class="wrap">
+
+  <nav class="top" aria-label="Site">
+    <a class="lockup small" href="./" aria-label="Poise home">
       <svg class="mark" viewBox="0 0 54 17" width="54" height="17" aria-hidden="true" focusable="false">
         <circle cx="4" cy="8.5" r="4" fill="#B8D9C5"/>
         <circle cx="22.5" cy="8.5" r="6.5" fill="#5A8472"/>
         <circle cx="45.5" cy="8.5" r="8.5" fill="#3E5C50"/>
       </svg>
       <span class="wordmark">Poise</span>
-      <span class="tagline">Your space to message</span>
     </a>
-    <h1>A moment before every message.</h1>
-    <p class="lede">There's time to say it well. Poise holds a message for a breath before it goes, in the app or right inside iMessage.</p>
-    <p class="soon">Coming soon to the App Store.</p>
+    <a class="top-link" href="support">Support</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Your space to message</p>
+      <h1>A moment before every message.</h1>
+      <p class="lede">There's time to say it well. Poise holds a message for a breath before it goes, in the app or right inside iMessage.</p>
+
+      <div class="cta cta-soon">
+        <p class="soon">Coming soon to the App Store.</p>
+        <p class="fine">Write to <a href="mailto:hello@withpoise.app">hello@withpoise.app</a> and I'll send a note when it launches.</p>
+      </div>
+      <div class="cta cta-launch">
+        <a class="badge" href="https://apps.apple.com/app/idAPPSTOREID"><img src="app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
+        <p class="fine">Free for 14 days, then $4.99 a month or $29.99 a year.</p>
+      </div>
+
+      <p class="kinds">For the messages that need more thought. An apology. A firm no. The first message after a long silence.</p>
+    </div>
+
+    <div class="hero-phone" aria-hidden="true">
+      <div class="shell">
+        <div class="screen reflect">
+          <div class="glow"></div>
+          <div class="island"></div>
+          <div class="back"><span class="chev">‹</span><span>Edit</span></div>
+          <div class="bloom">
+            <div class="bloom-inner">
+              <div class="halo"></div>
+              <div class="trio">
+                <span class="dot d1"></span>
+                <span class="dot d2"></span>
+                <span class="dot d3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
   <section class="beats" aria-label="How Poise works">
-    <div class="beat write">
-      <h2>Write</h2>
-      <p>Write on a plain canvas. Tag who it's for and set an intention.</p>
+    <p class="eyebrow center">How it works</p>
+
+    <div class="beat">
+      <div class="beat-text">
+        <h2>Write</h2>
+        <p>Write on a plain canvas. Tag who it's for and set an intention.</p>
+      </div>
+      <div class="beat-phone">
+        <div class="shell"><div class="screen">
+          <img src="shots/write.webp" width="940" height="2040" loading="lazy" decoding="async" alt="The Poise canvas, empty, asking What do you want to send? with Refine, Save draft and Reflect below.">
+        </div></div>
+      </div>
     </div>
-    <div class="beat reflect">
-      <h2>Reflect</h2>
-      <p>Reflect feels like sending, before you send. Poise holds the message for 10, 20, or 30 seconds. Then you choose: Send, Edit message, Save as draft, or Let go.</p>
+
+    <div class="beat flip">
+      <div class="beat-text">
+        <h2>Reflect</h2>
+        <p>Reflect feels like sending, before you send. Poise holds your message for 10, 20, or 30 seconds. Then it's your call: send it, edit it, save it for later, or let it go.</p>
+      </div>
+      <div class="beat-phone">
+        <div class="shell"><div class="screen">
+          <img src="shots/reflect.webp" width="940" height="2040" loading="lazy" decoding="async" alt="After the breath: your message read back, with Send, Edit, Save draft and Let go.">
+        </div></div>
+      </div>
     </div>
-    <div class="beat send">
-      <h2>Send</h2>
-      <p>Send opens the share sheet. Inside iMessage, Poise sits under any conversation, so you can draft, refine, or send a pause without leaving the thread.</p>
+
+    <div class="beat">
+      <div class="beat-text">
+        <h2>Send</h2>
+        <p>Inside iMessage, Poise sits under any conversation, so you can draft, refine, or send a pause without leaving the thread. Everywhere else, Send passes your message to the app you're using.</p>
+      </div>
+      <div class="beat-phone">
+        <div class="shell"><div class="screen">
+          <img src="shots/send.webp" width="940" height="2040" loading="lazy" decoding="async" alt="Poise open inside an iMessage conversation: the canvas, Refine, Save draft, Reflect, and Send a pause.">
+        </div></div>
+      </div>
     </div>
-    <div class="beat refine">
-      <h2>Refine</h2>
-      <p>Refine is help finding the words. Choose Softer, Shorter, or Firmer, and it brings back one suggestion, with a line on why. Your meaning, your voice. Then Use this or Keep mine.</p>
+
+    <div class="beat flip">
+      <div class="beat-text">
+        <h2>Refine</h2>
+        <p>Know what you mean, but not how to say it? Ask for shorter, softer, or firmer, and Refine brings back one suggestion with a line on why. Your meaning, your voice. Use it or keep yours.</p>
+      </div>
+      <div class="beat-phone">
+        <div class="shell"><div class="screen">
+          <img src="shots/refine.webp" width="940" height="2040" loading="lazy" decoding="async" alt="Refine's one suggestion with a line on why, and Use this or Keep mine.">
+        </div></div>
+      </div>
     </div>
   </section>
 
-  <p class="trial">Free for 14 days.</p>
+  <section class="note" aria-label="Why Poise exists">
+    <p class="note-text">I've rewritten this sentence a few times, which is fitting. Poise is the app I wanted for the messages I kept rewriting: a place to write, a moment to see how it feels sent, and the choice to send it or not.</p>
+    <p class="signature">Randall, maker of Poise</p>
+  </section>
+
+  <section class="faq" aria-label="Questions">
+    <h2>A few answers</h2>
+    <div class="qa">
+      <h3>Does Poise see my messages?</h3>
+      <p>No. Poise has no accounts, and what you write stays on your phone.</p>
+    </div>
+    <div class="qa">
+      <h3>What about Refine?</h3>
+      <p>Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The <a href="privacy">Privacy Policy</a> has the details.</p>
+    </div>
+    <div class="qa">
+      <h3>Does it work in iMessage?</h3>
+      <p>Yes. Poise sits under any conversation in iMessage, so you can write, reflect, and refine without leaving the thread. Everywhere else, Send passes your message to the app you're using.</p>
+    </div>
+    <div class="qa">
+      <h3>What happens after the trial?</h3>
+      <p>The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime. Cancel at least a day before the trial ends and nothing is charged.</p>
+    </div>
+    <div class="qa">
+      <h3>Is Poise therapy?</h3>
+      <p>No. Poise is a place to write and take a moment. It isn't therapy, counseling, or medical advice.</p>
+    </div>
+    <p class="more">More on the <a href="support">Support page</a>.</p>
+  </section>
+
+  <section class="closing" aria-label="Get Poise">
+    <h2>Feel sure of every message you send.</h2>
+    <div class="cta cta-soon">
+      <p class="soon">Coming soon to the App Store.</p>
+      <p class="fine">Write to <a href="mailto:hello@withpoise.app">hello@withpoise.app</a> and I'll send a note when it launches.</p>
+    </div>
+    <div class="cta cta-launch">
+      <a class="badge" href="https://apps.apple.com/app/idAPPSTOREID"><img src="app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
+      <p class="fine">Free for 14 days, then $4.99 a month or $29.99 a year. Cancel anytime.</p>
+    </div>
+  </section>
 
   <footer>
-    <nav aria-label="Site">
+    <nav aria-label="Legal">
       <a href="privacy">Privacy</a>
       <a href="terms">Terms</a>
       <a href="support">Support</a>
     </nav>
     <p>© 2026 With Poise LLC · <a href="mailto:hello@withpoise.app">hello@withpoise.app</a></p>
   </footer>
-</main>
+
+</div>
 </body>
 </html>
