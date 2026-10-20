@@ -96,8 +96,9 @@ a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; border-ra
   gap: 24px;
   padding: clamp(20px, 3vw, 32px) 0;
 }
-.top-link { font-weight: 500; font-size: 15px; color: var(--evergreen); text-decoration: none; padding: 10px 0; }
-.top-link:hover { color: var(--clay); }
+.top-get { font-weight: 500; font-size: 15px; color: var(--evergreen); text-decoration: none; padding: 10px 0; }
+.top-get:hover { color: var(--clay); }
+body[data-cta="soon"] .top-get { display: none; }
 
 .eyebrow {
   margin: 0;
@@ -133,14 +134,6 @@ a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; border-ra
   color: var(--ink-mid);
   max-width: 30em;
   margin: 22px 0 0;
-  text-wrap: pretty;
-}
-.hero .kinds {
-  margin: 30px 0 0;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink-mid);
-  max-width: 30em;
   text-wrap: pretty;
 }
 
