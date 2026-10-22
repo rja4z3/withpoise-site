@@ -165,6 +165,7 @@ body[data-cta="soon"] .top-get { display: none; }
 .badge:focus-visible { border-radius: 8px; }
 body[data-cta="soon"] .cta-launch { display: none; }
 body[data-cta="launch"] .cta-soon { display: none; }
+body[data-cta="soon"] .closing { display: none; }
 
 /* Phones. One construction everywhere: a dark shell around a screen at the
    iPhone's own proportions. The hero phone is live; the beats hold screenshots. */
@@ -343,6 +344,7 @@ body[data-cta="launch"] .cta-soon { display: none; }
 .closing .soon::before { margin-left: auto; margin-right: auto; }
 .closing .fine { margin-left: auto; margin-right: auto; max-width: 28em; }
 .home footer { margin-top: 0; padding: 28px 0 44px; }
+body[data-cta="soon"] .faq { padding-bottom: clamp(48px, 6vw, 80px); }
 
 /* ---------- Plain pages: privacy, terms, support ---------- */
 .page {
