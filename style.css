@@ -252,6 +252,13 @@ body[data-cta="launch"] .cta-soon { display: none; }
 .screen .card-label { display: block; font-size: 3.3cqw; color: #697D7E; margin-bottom: 1.4cqw; }
 .screen .card-text { display: block; font-size: 4.4cqw; color: var(--ink); }
 .screen .card-text.placeholder { color: #7A8E8D; }
+/* The card shows the start of the message and fades, the way a card does when a message runs on. */
+.screen .card-text.fade {
+  max-height: 2.9em;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(180deg, #000 45%, rgba(0,0,0,0));
+  mask-image: linear-gradient(180deg, #000 45%, rgba(0,0,0,0));
+}
 .dot { display: block; border-radius: 50%; flex: none; animation: poiseBreath 10s infinite; }
 .dot.d1 { width: 3cqw; height: 3cqw; background: var(--mint); }
 .dot.d2 { width: 4.5cqw; height: 4.5cqw; background: var(--moss); animation-delay: 0.35s; }
