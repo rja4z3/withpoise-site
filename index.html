@@ -29,9 +29,38 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "Does Poise see my messages?", "acceptedAnswer": {"@type": "Answer", "text": "No. Poise has no accounts, and what you write stays on your phone."}},
-    {"@type": "Question", "name": "What about Refine?", "acceptedAnswer": {"@type": "Answer", "text": "Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The Privacy Policy has the details."}},
-    {"@type": "Question", "name": "What happens after the trial?", "acceptedAnswer": {"@type": "Answer", "text": "The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime. Cancel at least a day before the trial ends and nothing is charged."}}
+    {
+      "@type": "Question",
+      "name": "Is Poise a messaging app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It's the step before sending. You write in Poise, take your moment, then send from iMessage or whichever app you already use. Your conversations stay where they are."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is what I write private?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. There are no accounts, and what you write stays on your phone. The one exception is Refine: when you tap it, Poise shares it with an outside partner to help find the words, and that's the end of it."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does it cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do I need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An iPhone on iOS 17 or later."
+      }
+    }
   ]
 }
 </script>
@@ -170,19 +199,23 @@ if (location.hostname === "withpoise.app") {
     </div>
   </section>
 
-  <section class="faq" aria-label="Questions">
-    <h2>A few answers</h2>
+  <section class="faq" aria-label="The basics">
+    <h2>The basics</h2>
     <div class="qa">
-      <h3>Does Poise see my messages?</h3>
-      <p>No. Poise has no accounts, and what you write stays on your phone.</p>
+      <h3>Is Poise a messaging app?</h3>
+      <p>It's the step before sending. You write in Poise, take your moment, then send from iMessage or whichever app you already use. Your conversations stay where they are.</p>
     </div>
     <div class="qa">
-      <h3>What about Refine?</h3>
-      <p>Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The <a href="privacy">Privacy Policy</a> has the details.</p>
+      <h3>Is what I write private?</h3>
+      <p>Yes. There are no accounts, and what you write stays on your phone. The one exception is Refine: when you tap it, Poise shares it with an outside partner to help find the words, and that's the end of it.</p>
     </div>
     <div class="qa">
-      <h3>What happens after the trial?</h3>
-      <p>The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime. Cancel at least a day before the trial ends and nothing is charged.</p>
+      <h3>What does it cost?</h3>
+      <p>The first 14 days are free. After that, Poise is $4.99 a month or $29.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime.</p>
+    </div>
+    <div class="qa">
+      <h3>What do I need?</h3>
+      <p>An iPhone on iOS 17 or later.</p>
     </div>
     <p class="more">More on the <a href="support">Support page</a>.</p>
   </section>
