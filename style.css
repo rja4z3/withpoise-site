@@ -235,6 +235,22 @@ body[data-cta="launch"] .cta-soon { display: none; }
   animation: poiseHalo 10s infinite;
 }
 .trio { position: relative; display: flex; align-items: center; gap: 3cqw; }
+/* The message card, as the real Reflect screen draws it: left 7%, top 45%, 86% wide, the words read back in italic. */
+.screen .card {
+  position: absolute;
+  left: 7%;
+  right: 7%;
+  top: 44.8%;
+  padding: 4.2cqw 5cqw 4.6cqw;
+  border-radius: 4.5cqw;
+  background: rgba(227, 229, 220, 0.9);
+  border: 1px solid rgba(62, 92, 80, 0.10);
+  font-family: var(--serif);
+  font-style: italic;
+  line-height: 1.4;
+}
+.screen .card-label { display: block; font-size: 3.3cqw; color: #697D7E; margin-bottom: 1.4cqw; }
+.screen .card-text { display: block; font-size: 4.4cqw; color: var(--ink); }
 .dot { display: block; border-radius: 50%; flex: none; animation: poiseBreath 10s infinite; }
 .dot.d1 { width: 3cqw; height: 3cqw; background: var(--mint); }
 .dot.d2 { width: 4.5cqw; height: 4.5cqw; background: var(--moss); animation-delay: 0.35s; }
