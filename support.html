@@ -37,9 +37,11 @@ if (location.hostname === "withpoise.app") {
 }
 </script>
 </head>
-<body>
-<main class="page plain">
-  <header>
+<!-- The one switch, as on the home page: data-cta="soon" before launch, "launch" on release day (README, Going live). -->
+<body data-cta="soon">
+<div class="wrap">
+
+  <nav class="top" aria-label="Site">
     <a class="lockup small" href="./" aria-label="Poise home">
       <svg class="mark" viewBox="0 0 54 17" width="54" height="17" aria-hidden="true" focusable="false">
         <circle cx="4" cy="8.5" r="4" fill="#B8D9C5"/>
@@ -48,38 +50,56 @@ if (location.hostname === "withpoise.app") {
       </svg>
       <span class="wordmark">Poise</span>
     </a>
-    <h1>Support</h1>
-    <p class="note">Poise is made by With Poise LLC. Write to us and a person answers.</p>
-  </header>
+    <a class="top-get" href="https://apps.apple.com/app/idAPPSTOREID">Get Poise</a>
+  </nav>
 
-  <h2>Reach us</h2>
-  <p>Email <a href="mailto:hello@withpoise.app">hello@withpoise.app</a>. Say which iPhone and iOS version you're on if it's about something not working.</p>
+  <main class="page plain">
+    <header>
+      <h1>Support</h1>
+      <p class="lede">Poise is made by With Poise LLC. Write to us and a person answers.</p>
+    </header>
 
-  <h2>How to cancel</h2>
-  <p>Subscriptions are handled by Apple, so canceling happens in your iPhone's settings, not in Poise.</p>
-  <ol>
-    <li>Open Settings and tap your name at the top.</li>
-    <li>Tap Subscriptions.</li>
-    <li>Tap Poise, then Cancel Subscription.</li>
-  </ol>
-  <p>A canceled subscription keeps working until the end of the period you've paid for. During a free trial, cancel at least a day before it ends and nothing is charged. Refunds go through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+    <h2>Reach us</h2>
+    <p>Email <a href="mailto:hello@withpoise.app">hello@withpoise.app</a>. Say which iPhone and iOS version you're on if it's about something not working.</p>
 
-  <h2>A few answers</h2>
-  <p><strong>Where do my messages live?</strong> On your phone. Poise has no accounts.</p>
-  <p><strong>What does Refine do with my message?</strong> Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The Privacy Policy has the details.</p>
-  <p><strong>Where are my drafts?</strong> In Drafts, under Sleeping on it or Still writing. An unfinished message stays put if your phone locks or restarts.</p>
-  <p><strong>Is Poise therapy?</strong> No. Poise is a place to write and take a moment. It isn't therapy, counseling, or medical advice.</p>
+    <h2>How to cancel</h2>
+    <p>Subscriptions are handled by Apple, so canceling happens in your iPhone's settings, not in Poise.</p>
+    <ol>
+      <li>Open Settings and tap your name at the top.</li>
+      <li>Tap Subscriptions.</li>
+      <li>Tap Poise, then Cancel Subscription.</li>
+    </ol>
+    <p>A canceled subscription keeps working until the end of the period you've paid for. During a free trial, cancel at least a day before it ends and nothing is charged. Refunds go through Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 
-  <p class="contact">See also the <a href="privacy">Privacy Policy</a> and the <a href="terms">Terms of Service</a>.</p>
+    <h2>A few answers</h2>
+    <div class="qa">
+      <h3>Where do my messages live?</h3>
+      <p>On your phone. Poise has no accounts.</p>
+    </div>
+    <div class="qa">
+      <h3>What does Refine do with my message?</h3>
+      <p>Refine runs only when you tap it and needs a connection. It sends the message and your direction out, brings back one suggestion, and that's the end of it. The Privacy Policy has the details.</p>
+    </div>
+    <div class="qa">
+      <h3>Where are my drafts?</h3>
+      <p>In Drafts, under Sleeping on it or Still writing. An unfinished message stays put if your phone locks or restarts.</p>
+    </div>
+    <div class="qa">
+      <h3>Is Poise therapy?</h3>
+      <p>No. Poise is a place to write and take a moment. It isn't therapy, counseling, or medical advice.</p>
+    </div>
+    <p class="more">See also the <a href="privacy">Privacy Policy</a> and the <a href="terms">Terms of Service</a>.</p>
+  </main>
 
   <footer>
-    <nav aria-label="Site">
+    <nav aria-label="Legal">
       <a href="privacy">Privacy</a>
       <a href="terms">Terms</a>
       <a href="support">Support</a>
     </nav>
     <p>© 2026 With Poise LLC · <a href="mailto:hello@withpoise.app">hello@withpoise.app</a></p>
   </footer>
-</main>
+
+</div>
 </body>
 </html>

@@ -37,9 +37,11 @@ if (location.hostname === "withpoise.app") {
 }
 </script>
 </head>
-<body>
-<main class="page plain">
-  <header>
+<!-- The one switch, as on the home page: data-cta="soon" before launch, "launch" on release day (README, Going live). -->
+<body data-cta="soon">
+<div class="wrap">
+
+  <nav class="top" aria-label="Site">
     <a class="lockup small" href="./" aria-label="Poise home">
       <svg class="mark" viewBox="0 0 54 17" width="54" height="17" aria-hidden="true" focusable="false">
         <circle cx="4" cy="8.5" r="4" fill="#B8D9C5"/>
@@ -48,9 +50,14 @@ if (location.hostname === "withpoise.app") {
       </svg>
       <span class="wordmark">Poise</span>
     </a>
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated October 15, 2026</p>
-  </header>
+    <a class="top-get" href="https://apps.apple.com/app/idAPPSTOREID">Get Poise</a>
+  </nav>
+
+  <main class="page plain">
+    <header>
+      <h1>Terms of Service</h1>
+      <p class="updated">Last updated October 15, 2026</p>
+    </header>
   <h2>Acceptance of Terms</h2>
   <p>By downloading, installing, or using Poise ("the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
   <h2>License to Use</h2>
@@ -80,14 +87,17 @@ if (location.hostname === "withpoise.app") {
   <h2>Contact</h2>
   <p>If you have questions about these Terms of Service, please contact us at: <a href="mailto:hello@withpoise.app">hello@withpoise.app</a></p>
   <p>Copyright © 2026 With Poise LLC. All rights reserved.</p>
+  </main>
+
   <footer>
-    <nav aria-label="Site">
+    <nav aria-label="Legal">
       <a href="privacy">Privacy</a>
       <a href="terms">Terms</a>
       <a href="support">Support</a>
     </nav>
     <p>© 2026 With Poise LLC · <a href="mailto:hello@withpoise.app">hello@withpoise.app</a></p>
   </footer>
-</main>
+
+</div>
 </body>
 </html>

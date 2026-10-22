@@ -127,7 +127,7 @@ body[data-cta="soon"] .top-get { display: none; }
   margin: 18px 0 0;
   text-wrap: balance;
 }
-.hero .lede {
+.hero .lede, .plain .lede {
   font-weight: 300;
   font-size: clamp(18px, 16px + 0.5vw, 21px);
   line-height: 1.55;
@@ -346,43 +346,48 @@ body[data-cta="soon"] .closing { display: none; }
 .home footer { margin-top: 0; padding: 28px 0 44px; }
 body[data-cta="soon"] .faq { padding-bottom: clamp(48px, 6vw, 80px); }
 
-/* ---------- Plain pages: privacy, terms, support ---------- */
+/* ---------- Plain pages: privacy, terms, support ----------
+   Same shell as the home page: the top row with the lockup (and Get Poise at launch) inside .wrap,
+   the footer at the bottom of .wrap. Between them, one centered reading column that keeps the
+   home's type: Lora titles at the closing's scale, the hero's light lede, 17px reading text. */
 .page {
   position: relative;
   max-width: 42rem;
   margin: 0 auto;
-  padding: 3.5rem 1rem 3rem;
+  padding: clamp(20px, 4vw, 56px) 0 clamp(56px, 7vw, 104px);
 }
-@media (min-width: 700px) { .page { padding: 5rem 1.5rem 4rem; } }
-.plain header { margin-bottom: 2.25rem; }
+.plain header { margin-bottom: clamp(28px, 4vw, 44px); }
 .plain h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(1.8rem, 6vw, 2.4rem);
-  line-height: 1.15;
-  margin: 1.75rem 0 0.4rem;
+  font-size: clamp(36px, 20px + 2.6vw, 56px);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin: 0;
   text-wrap: balance;
 }
-.plain .updated { margin: 0 0 1.75rem; color: var(--ink-faint); font-size: 0.9rem; }
-.plain .note { color: var(--ink-mid); font-size: 1rem; margin: 0 0 1.5rem; max-width: none; padding: 0; }
+.plain .lede { margin-top: 18px; }
+.plain .updated { margin: 14px 0 0; font-size: 14px; line-height: 1.5; color: var(--ink-faint); }
 .plain h2 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: 1.3rem;
-  line-height: 1.25;
-  margin: 2rem 0 0.5rem;
+  font-size: clamp(24px, 20px + 0.6vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.005em;
+  margin: clamp(36px, 4vw, 48px) 0 10px;
 }
-.plain p, .plain li { color: var(--ink); font-size: 1rem; }
-.plain p { margin: 0 0 0.9rem; text-wrap: pretty; }
-.plain ul, .plain ol { margin: 0 0 0.9rem; padding-left: 1.25rem; }
-.plain li { margin: 0 0 0.45rem; }
+.plain p, .plain li { font-size: 17px; line-height: 1.6; color: var(--ink); }
+.plain p { margin: 0 0 14px; text-wrap: pretty; }
+.plain ul, .plain ol { margin: 0 0 14px; padding-left: 1.3rem; }
+.plain li { margin: 0 0 8px; }
 .plain li::marker { color: var(--ink-faint); }
-.plain .contact { margin-top: 1rem; }
+.plain .qa p { margin: 8px 0 0; font-size: 16px; color: var(--ink-mid); }
+.plain .more { margin-top: 28px; }
 
 /* Footer, every page */
 footer {
-  margin-top: 4rem;
-  padding-top: 1.5rem;
+  margin-top: 0;
+  padding: 28px 0 44px;
   border-top: 1px solid var(--line-light);
   text-align: center;
   font-size: 0.9rem;

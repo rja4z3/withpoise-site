@@ -23,7 +23,7 @@ LOCKUP = '''    <a class="lockup small" href="./" aria-label="Poise home">
     </a>'''
 
 FOOTER = '''  <footer>
-    <nav aria-label="Site">
+    <nav aria-label="Legal">
       <a href="privacy">Privacy</a>
       <a href="terms">Terms</a>
       <a href="support">Support</a>
@@ -103,16 +103,26 @@ if (location.hostname === "withpoise.app") {{
 }}
 </script>
 </head>
-<body>
-<main class="page plain">
-  <header>
+<!-- The one switch, as on the home page: data-cta="soon" before launch, "launch" on release day (README, Going live). -->
+<body data-cta="soon">
+<div class="wrap">
+
+  <nav class="top" aria-label="Site">
 {LOCKUP}
-    <h1>{html.escape(name)}</h1>
-    <p class="updated">Last updated {html.escape(updated or "")}</p>
-  </header>
+    <a class="top-get" href="https://apps.apple.com/app/idAPPSTOREID">Get Poise</a>
+  </nav>
+
+  <main class="page plain">
+    <header>
+      <h1>{html.escape(name)}</h1>
+      <p class="updated">Last updated {html.escape(updated or "")}</p>
+    </header>
 {body}
+  </main>
+
 {FOOTER}
-</main>
+
+</div>
 </body>
 </html>
 '''
