@@ -45,8 +45,8 @@ def convert(md):
         if in_list: body.append("  </ul>"); in_list = False
     for raw in md.splitlines():
         line = raw.rstrip()
-        if not line or line == "---" or line.startswith(">"):
-            close(); continue
+        if not line or line == "---" or line.startswith(">") or line.startswith("Copyright ©"):
+            close(); continue  # the footer carries the copyright line
         if line.startswith("# "):
             title = line[2:].strip(); continue
         m = re.match(r"\*\*Last Updated\*\*:\s*(.+)", line)
