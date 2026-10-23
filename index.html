@@ -180,7 +180,9 @@ if (location.hostname === "withpoise.app") {
       </div>
       <div class="beat-phone">
         <div class="shell"><div class="screen">
-          <img src="shots/reflect.webp" width="940" height="2040" loading="lazy" decoding="async" alt="Reflect: the message read back under the breathing dots while Poise holds it.">
+          <!-- The one beat that moves: a short loop recorded from the real app (Reflect's breath, one cycle).
+               It loads only when it scrolls near, and stays the still for reduced motion or when a phone won't autoplay. -->
+          <video class="loop" muted loop playsinline preload="none" poster="shots/reflect.webp" width="940" height="2040" data-src="shots/reflect-loop.mp4" aria-label="Reflect: the message read back under the breathing dots while Poise holds it."></video>
         </div></div>
       </div>
     </div>
@@ -238,5 +240,24 @@ if (location.hostname === "withpoise.app") {
   </footer>
 
 </div>
+<script>
+// The Reflect beat breathes. The loop is fetched only when the beat comes near the viewport, plays
+// silently, and pauses off screen. Anyone who asked for less motion keeps the still; so does a phone
+// that refuses to autoplay (Low Power Mode), because a refused play() just leaves the poster up.
+(function () {
+  var v = document.querySelector("video.loop");
+  if (!v || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  function start() {
+    if (!v.getAttribute("src")) { v.src = v.dataset.src; v.load(); }
+    var p = v.play(); if (p && p.catch) p.catch(function () {});
+  }
+  if (!("IntersectionObserver" in window)) { start(); return; }
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) start(); else if (v.getAttribute("src")) v.pause();
+    });
+  }, { rootMargin: "240px 0px" }).observe(v);
+})();
+</script>
 </body>
 </html>
