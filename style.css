@@ -407,3 +407,19 @@ footer p a { color: inherit; text-decoration: none; }
   .dot { transform: scale(0.9); }
   .halo { transform: translate(-50%, -50%) scale(0.84); opacity: 0.34; }
 }
+
+/* Print / PDF: the desktop layout on tall pages, colors kept, sections unbroken,
+   the breathing beat as its still (video doesn't print), nothing from the launch state. */
+.print-only { display: none; }
+@media print {
+  @page { size: 1040px 1560px; margin: 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html, body { background: var(--cream); }
+  .hero, .beat, .faq, .closing, footer { break-inside: avoid; }
+  .beats .eyebrow { break-after: avoid; }
+  video.loop { display: none; }
+  .print-only { display: block; }
+  .shell, .beat-phone .shell { box-shadow: none; }   /* a blurred shadow prints as a gray slab */
+  body::before, body.home::before, .screen .glow { display: none; }
+  .top-get, .cta-launch { display: none; }
+}
