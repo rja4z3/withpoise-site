@@ -180,6 +180,8 @@ body[data-cta="soon"] .top-get { display: none; }
 .notify button:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
 .notify .fine { flex-basis: 100%; margin: 2px 0 0; }
 .notify .done { color: var(--evergreen); }
+.notify .trouble { color: var(--clay); }
+.notify .hp { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }   /* the honeypot, off screen */
 .notify [hidden] { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .badge { display: inline-block; line-height: 0; text-decoration: none; }

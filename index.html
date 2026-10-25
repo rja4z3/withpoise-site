@@ -112,14 +112,18 @@ if (location.hostname === "withpoise.app") {
 
       <div class="cta cta-soon">
         <p class="soon">Coming soon to the App Store.</p>
-        <!-- The list lives at Buttondown. Without JavaScript the form posts there and lands on Buttondown's own thanks page;
-             with it, the address goes the same way and the thanks line appears in place. The newsletter username at Buttondown is withpoise. -->
-        <form class="notify" action="https://buttondown.com/api/emails/embed-subscribe/withpoise" method="post">
+        <!-- The address goes to Poise's own server (the Refine Worker's /v1/notify), which adds it to the Buttondown
+             list as already confirmed, so no confirmation email goes out. With JavaScript the thanks line appears in
+             place; without it the form posts the same way and the server sends the visitor back here with ?signup=ok.
+             The "website" field is a honeypot: people never see it, bots fill it. -->
+        <form class="notify" action="https://poise-refine.poise-refine.workers.dev/v1/notify" method="post">
           <label class="sr-only" for="notify-email">Email address</label>
           <input id="notify-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" inputmode="email" required>
+          <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button type="submit">Notify me</button>
           <p class="fine promise">We'll send a note when Poise launches, and the occasional update after. Unsubscribe anytime.</p>
-          <p class="fine done" hidden>Thanks. Confirm from your inbox and you're on the list.</p>
+          <p class="fine done" hidden>Thanks. We'll send a note when Poise launches.</p>
+          <p class="fine trouble" hidden>Something went wrong. Try again in a moment.</p>
         </form>
       </div>
       <div class="cta cta-launch">
@@ -250,21 +254,34 @@ if (location.hostname === "withpoise.app") {
 
 </div>
 <script>
-// The notify form: the address goes to the list in the background and the thanks line takes the field's place.
-// If that can't happen, the form submits the ordinary way and Buttondown shows its own thanks page.
+// The notify form: the address goes to Poise's server in the background and the thanks line takes the field's
+// place. If the server says no, a short line says so. If the request can't be made at all, the form submits the
+// ordinary way and the server sends the visitor back here with ?signup=ok, which shows the same thanks line.
 (function () {
   var f = document.querySelector("form.notify");
-  if (!f || !window.fetch) return;
+  if (!f) return;
+  var btn = f.querySelector("button"), field = f.querySelector("#notify-email");
+  function thanks() {
+    f.querySelector(".promise").hidden = true; f.querySelector(".trouble").hidden = true;
+    field.hidden = true; btn.hidden = true;
+    f.querySelector(".done").hidden = false;
+  }
+  function trouble() {
+    btn.disabled = false;
+    f.querySelector(".trouble").hidden = false;
+  }
+  if (/[?&]signup=ok\b/.test(location.search)) thanks();
+  if (!window.fetch) return;
   f.addEventListener("submit", function (e) {
     e.preventDefault();
-    var btn = f.querySelector("button"); btn.disabled = true;
-    fetch(f.action, { method: "POST", mode: "no-cors", body: new FormData(f) })
-      .then(function () {
-        f.querySelector(".promise").hidden = true;
-        f.querySelector("#notify-email").hidden = true;
-        btn.hidden = true;
-        f.querySelector(".done").hidden = false;
-      })
+    btn.disabled = true; f.querySelector(".trouble").hidden = true;
+    fetch(f.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({ email: field.value, website: f.website.value })
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (d) { if (d && d.ok) thanks(); else trouble(); })
       .catch(function () { btn.disabled = false; f.submit(); });
   });
 })();
