@@ -16,12 +16,12 @@ Copy, colors and the "words that must not appear" list live in the app repo at `
 
 ## Going live
 
-The site must be public BEFORE the app is submitted: App Review opens the privacy page. Steps 1–5 happen then; steps 6–7 on release day.
+LIVE since October 26, 2026. The repository is public (GitHub's free plan hosts Pages for public repositories only), GitHub Pages serves the root of `main`, `CNAME` holds the domain, GoDaddy's records point at GitHub (four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; `www` CNAME → `rja4z3.github.io`; the `MX`, `TXT` and `NS` records untouched, email depends on them), the certificate covers withpoise.app and www.withpoise.app, and Enforce HTTPS is on. http and www redirect to https://withpoise.app. A change is a commit and a push; Pages republishes in about a minute.
 
-1. Repository Settings → General → change visibility to Public (GitHub Pages is free only for public repositories).
-2. Settings → Pages: source "Deploy from a branch", branch `main`, folder `/ (root)`. Custom domain `withpoise.app`. Save.
-3. At GoDaddy, DNS for withpoise.app: remove the two `A` records for `@` that point to GoDaddy's builder (`13.248.243.5`, `76.223.105.230`); add four `A` records for `@`: `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`; change the `www` CNAME to `rja4z3.github.io`. Leave the `MX` (`smtp.google.com`) and `TXT` records alone; email depends on them.
-4. Back in Settings → Pages, tick "Enforce HTTPS" once it's offered (GitHub issues the certificate; up to an hour).
-5. Check https://withpoise.app, /privacy, /terms and /support load without login.
+If the domain ever has to be set again: GitHub's checker can lag behind new DNS records by up to an hour (its own cache), and re-saving the same domain does nothing; removing the custom domain and setting it again in Settings → Pages (or by API, `cname` null then `withpoise.app`) requests the certificate at once, then tick Enforce HTTPS.
+
+Still to do:
+
+5. Verify the domain with GitHub so nobody else can claim withpoise.app on Pages if the site is ever unlinked: GitHub Settings → Pages → Add a domain → add the `TXT` record it shows at GoDaddy → Verify. Also turn off Issues, Wiki and Projects on the repository (public writing surfaces nobody needs).
 6. Release day: (a) change `data-cta="soon"` to `data-cta="launch"` on every page (`index.html`, `support.html`, `privacy.html`, `terms.html`) and in the template inside `_dev/legal.py`, one find-and-replace; (b) put the App Store ID in place of `APPSTOREID` everywhere it appears (the badge links, the Get Poise links in each top row, and the commented `apple-itunes-app` meta tag in `index.html`'s `<head>`), then uncomment that tag (Safari on iPhone then shows Apple's own "open in the App Store" strip). Commit and push; Pages redeploys in about a minute.
 7. Visit counter: PostHog, the app's own project, is already on every page (page views only, no cookies, nothing stored on the visitor's device, no replay, no identifying). It runs only when the address is withpoise.app, so nothing to switch on: once the site is live, the numbers appear under Web analytics in PostHog. Visitor counts read high there (each page load counts as a new visitor, by design); page views, pages, referrers and countries are the numbers to trust.
