@@ -159,6 +159,10 @@ body[data-cta="soon"] .top-get { display: none; }
 .fine { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-mid); max-width: 30em; text-wrap: pretty; }
 .cta-soon .fine { margin-top: 12px; }
 
+/* The moments line under the sentence (Randall, Oct 26: option 1), in the serif italic of the words on the Reflect card. */
+.hero .moments { margin: 14px 0 0; font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--clay); max-width: 30em; }
+.faq.private p { margin: 0; }
+
 /* The first screen, as Randall chose it Oct 26 (variant B of two shown at his phone's width): no eyebrow,
    no short rule, the sign-up grouped tight, and on a narrow screen the phone comes before the sign-up. */
 .hero .soon::before { display: none; }
@@ -171,6 +175,7 @@ body[data-cta="soon"] .top-get { display: none; }
   .hero-text { display: contents; }
   .hero h1 { order: 1; }
   .hero .lede { order: 2; }
+  .hero .moments { order: 2; }
   .hero .hero-phone { order: 3; margin: 48px auto 36px; }   /* outweighs the .hero-phone margin set further down */
   .hero .cta { order: 4; margin-top: 0; }
 }

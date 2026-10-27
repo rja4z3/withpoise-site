@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Poise — A moment before every message</title>
+<title>Poise — Your space to message</title>
 <meta name="description" content="A quiet place to write before you send. Reflect on a message as if you’d already sent it, then send it from Poise or right inside iMessage.">
 <link rel="canonical" href="https://withpoise.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Poise">
 <meta property="og:url" content="https://withpoise.app/">
-<meta property="og:title" content="Poise — A moment before every message">
+<meta property="og:title" content="Poise — Your space to message">
 <meta property="og:description" content="A quiet place to write before you send. Reflect on a message as if you’d already sent it, then send it from Poise or right inside iMessage.">
 <meta property="og:image" content="https://withpoise.app/og-mark.jpg">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="Poise: three dots, mint to evergreen, over the name, on cream.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Poise — A moment before every message">
+<meta name="twitter:title" content="Poise — Your space to message">
 <meta name="twitter:description" content="A quiet place to write before you send. Reflect on a message as if you’d already sent it, then send it from Poise or right inside iMessage.">
 <meta name="twitter:image" content="https://withpoise.app/og-mark.jpg">
 <meta name="theme-color" content="#F9F4EA">
@@ -84,14 +84,6 @@
     },
     {
       "@type": "Question",
-      "name": "Is what I write private?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. There are no accounts, and what you write stays on your phone. The one exception is Refine: when you tap it, Poise shares it with an outside partner to help find the right words."
-      }
-    },
-    {
-      "@type": "Question",
       "name": "What does it cost?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -153,6 +145,7 @@ if (location.hostname === "withpoise.app") {
     <div class="hero-text">
       <h1>A moment before every message.</h1>
       <p class="lede">Poise is a quiet place to write before you send. Reflect on the message as if you'd already sent it, then send it from Poise through any messaging app, or right inside iMessage.</p>
+      <p class="moments">Some messages deserve more than a quick reply. The apology. The no. The one you’ve been putting off.</p>
 
       <div class="cta cta-soon">
         <p class="soon">Coming soon to the App Store for iPhone.</p>
@@ -258,6 +251,11 @@ if (location.hostname === "withpoise.app") {
     </div>
   </section>
 
+  <section class="faq private" aria-label="Private by design">
+    <h2>Private by design</h2>
+    <p>There are no accounts, and what you write stays on your phone. Poise never sees your conversations: it hands your message to the app you already use and steps back. The one exception is Refine. When you tap it, the message you tapped it on goes to an outside partner to help find the right words, and nothing else does.</p>
+  </section>
+
   <section class="faq" aria-label="The basics">
     <h2>The basics</h2>
     <div class="qa">
@@ -265,8 +263,6 @@ if (location.hostname === "withpoise.app") {
       <p>It's the step before sending. You write in Poise, take your moment, then send straight from Poise through whichever app you already use. Your conversations stay where they are.</p>
     </div>
     <div class="qa">
-      <h3>Is what I write private?</h3>
-      <p>Yes. There are no accounts, and what you write stays on your phone. The one exception is Refine: when you tap it, Poise shares it with an outside partner to help find the right words.</p>
     </div>
     <div class="qa">
       <h3>What does it cost?</h3>
@@ -280,7 +276,7 @@ if (location.hostname === "withpoise.app") {
 
   <!-- The closing shows only in the launch state (the switch on <body>); before launch, The basics run into the footer. -->
   <section class="closing" aria-label="Get Poise">
-    <h2>Every message gets a moment.</h2>
+    <h2>A moment before every message.</h2>
     <div class="cta cta-launch">
       <a class="badge" href="https://apps.apple.com/app/idAPPSTOREID"><img src="app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
       <p class="fine">Free for 14 days, then $4.99 a month or $29.99 a year. Cancel anytime.</p>
