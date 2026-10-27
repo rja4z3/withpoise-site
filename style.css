@@ -171,7 +171,7 @@ body[data-cta="soon"] .top-get { display: none; }
   .hero-text { display: contents; }
   .hero h1 { order: 1; }
   .hero .lede { order: 2; }
-  .hero-phone { order: 3; margin: 30px auto 34px; }
+  .hero .hero-phone { order: 3; margin: 48px auto 36px; }   /* outweighs the .hero-phone margin set further down */
   .hero .cta { order: 4; margin-top: 0; }
 }
 .fine a, .more a, .qa a { color: var(--evergreen); text-decoration: underline; text-underline-offset: 3px; }
