@@ -161,7 +161,6 @@ body[data-cta="soon"] .top-get { display: none; }
 
 /* The How it works label as a section title (Randall, Oct 27: a bit bigger), in the serif, still clay and centred. */
 .beats .eyebrow.section-title { font-family: var(--serif); font-weight: 500; font-size: clamp(22px, 18px + 1vw, 26px); letter-spacing: -0.005em; }
-.faq.private p { margin: 0; }
 
 /* The first screen, as Randall chose it Oct 26 (variant B of two shown at his phone's width): no eyebrow,
    no short rule, the sign-up grouped tight, and on a narrow screen the phone comes before the sign-up. */
@@ -389,6 +388,13 @@ body[data-cta="soon"] .closing { display: none; }
 .closing .fine { margin-left: auto; margin-right: auto; max-width: 28em; }
 .home footer { margin-top: 0; padding: 28px 0 44px; }
 body[data-cta="soon"] .faq { padding-bottom: clamp(48px, 6vw, 80px); }
+/* One rhythm between the sections after the beats (Randall, Oct 27: the gaps around Private by default read uneven).
+   A beat's bottom padding plus a section's top padding is the gap between a beat and the next section; the same sum
+   is the gap between Private by default and The basics, so the private section carries a beat's bottom padding, not
+   the page-end padding the last section has. Its paragraph sits under its title at the same distance as the first
+   question sits under The basics. */
+body[data-cta="soon"] .faq.private, body[data-cta="launch"] .faq.private { padding-bottom: clamp(28px, 4vw, 56px); }
+.faq.private p { margin: 24px 0 0; }   /* 8 under the title plus 24 = 32, the first question's distance under The basics */
 
 /* ---------- Plain pages: privacy, terms, support ----------
    Same shell as the home page: the top row with the lockup (and Get Poise at launch) inside .wrap,
