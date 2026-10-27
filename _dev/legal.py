@@ -72,6 +72,15 @@ for src, out, name, slug, desc in PAGES:
 <title>{name} — Poise</title>
 <meta name="description" content="{html.escape(desc)}">
 <link rel="canonical" href="https://withpoise.app/{slug}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Poise">
+<meta property="og:url" content="https://withpoise.app/{slug}">
+<meta property="og:title" content="{name} — Poise">
+<meta property="og:description" content="{html.escape(desc)}">
+<meta property="og:image" content="https://withpoise.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#F9F4EA">
 <link rel="icon" href="favicon.png" type="image/png" sizes="64x64">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
