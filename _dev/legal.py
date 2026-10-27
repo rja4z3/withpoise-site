@@ -77,7 +77,7 @@ for src, out, name, slug, desc in PAGES:
 <meta property="og:url" content="https://withpoise.app/{slug}">
 <meta property="og:title" content="{name} — Poise">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:image" content="https://withpoise.app/og.jpg">
+<meta property="og:image" content="https://withpoise.app/og-mark.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/jpeg">
