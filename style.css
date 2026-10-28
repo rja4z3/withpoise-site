@@ -175,7 +175,12 @@ body[data-cta="soon"] .top-get { display: none; }
   .hero h1 { order: 1; }
   .hero .lede { order: 2; }
   .hero .hero-phone { order: 3; margin: 48px auto 36px; }   /* outweighs the .hero-phone margin set further down */
-  .hero .cta { order: 4; margin-top: 0; }
+  .hero .cta { order: 4; margin-top: 0; align-self: stretch; }   /* the sign-up spans the width in both states (it centered itself in the thanks state by accident) */
+  /* On a phone the field takes the whole row and the button sits under it, full width, like the app's own
+     buttons (user-ruled Oct 28: beside the button the field showed about 26 characters and cut longer addresses). */
+  .notify { max-width: none; }
+  .notify input[type="email"] { flex: 1 1 100%; }
+  .notify button { flex: 1 1 100%; }
 }
 .fine a, .more a, .qa a { color: var(--evergreen); text-decoration: underline; text-underline-offset: 3px; }
 .fine a:hover, .more a:hover, .qa a:hover { color: var(--clay); }
@@ -198,7 +203,14 @@ body[data-cta="soon"] .top-get { display: none; }
 .notify button:disabled { opacity: 0.7; cursor: default; }
 .notify button:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
 .notify .fine { flex-basis: 100%; margin: 2px 0 0; }
-.notify .done { color: var(--evergreen); }
+/* The thanks takes the field's place: a soft green capsule the width of the field and button it replaces
+   (user-ruled Oct 28: the small gray line left the eye nowhere to land). */
+.notify .done {
+  display: block; width: 100%; box-sizing: border-box; margin: 0;
+  padding: 13px 20px; border-radius: 999px;
+  background: var(--mint-wash); color: var(--evergreen);
+  font-size: 16px; line-height: 1.4; text-align: center; text-wrap: balance;
+}
 .notify .trouble { color: var(--clay); }
 .notify .hp { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }   /* the honeypot, off screen */
 .notify [hidden] { display: none; }
