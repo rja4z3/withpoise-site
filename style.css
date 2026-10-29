@@ -365,7 +365,7 @@ body[data-cta="soon"] .closing { display: none; }
   margin: 0;
 }
 .beat p { font-size: 18px; line-height: 1.6; color: var(--ink-mid); margin: 14px 0 0; text-wrap: pretty; }
-.beat p.how { font-size: 15px; color: var(--ink-faint); margin-top: 12px; }
+.beat p.how { font-size: 16px; color: var(--ink-mid); margin-top: 12px; }
 
 /* The answers */
 .faq { max-width: 640px; margin: 0 auto; padding: clamp(56px, 8vw, 104px) 0 0; }
