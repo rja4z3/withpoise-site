@@ -337,7 +337,7 @@ if (location.hostname === "withpoise.app") {
     entries.forEach(function (e) {
       if (e.isIntersecting) start(); else if (v.getAttribute("src")) v.pause();
     });
-  }, { rootMargin: "240px 0px" }).observe(v);
+  }, { rootMargin: "900px 0px" }).observe(v);   /* fetch the loop well before it scrolls into view (Randall, Oct 29: it arrived late) */
 })();
 </script>
 </body>
