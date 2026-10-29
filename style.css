@@ -21,7 +21,9 @@
 }
 
 * { box-sizing: border-box; }
-html { background: var(--mint-wash); color-scheme: light; -webkit-text-size-adjust: 100%; }
+/* The page's base colour is cream, so Safari's strip under the clock and the top bounce match the hero;
+   the fade keeps the bottom bounce on the mint the page ends in (Randall, Oct 29: a mint bar at the top in Safari). */
+html { background-color: var(--cream); background-image: linear-gradient(180deg, var(--cream) 0%, var(--cream) 45%, var(--mint-wash) 100%); color-scheme: light; -webkit-text-size-adjust: 100%; }
 body {
   margin: 0;
   min-height: 100svh;
