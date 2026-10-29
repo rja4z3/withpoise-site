@@ -278,7 +278,7 @@ body[data-cta="soon"] .closing { display: none; }
   align-items: center;
   gap: 4px;
 }
-.screen .back .chev { font-size: 15px; line-height: 1; }
+.screen .back .chev { display: block; width: 7px; height: 11px; flex: none; position: relative; top: -0.5px; }   /* the app's chevron: a stroke, level with the word (Randall, Oct 29) */
 .bloom { position: absolute; left: 0; right: 0; top: 15.4%; display: flex; justify-content: center; }
 .bloom-inner { position: relative; width: 71%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
 .halo {
