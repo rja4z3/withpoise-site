@@ -87,7 +87,7 @@
       "name": "What does it cost?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The first 14 days are free. After that, Poise is $5.99 a month or $34.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime."
+        "text": "The first 14 days are free. After that, Poise is $5.99 a month or $34.99 a year ($2.92 a month), billed by Apple. Cancel in your iPhone's Settings anytime."
       }
     },
     {
@@ -164,7 +164,7 @@ if (location.hostname === "withpoise.app") {
       </div>
       <div class="cta cta-launch">
         <a class="badge" href="https://apps.apple.com/app/idAPPSTOREID"><img src="app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
-        <p class="fine">Free for 14 days, then $5.99 a month or $34.99 a year.</p>
+        <p class="fine">Free for 14 days, then $5.99 a month or $34.99&nbsp;a&nbsp;year&nbsp;($2.92&nbsp;a&nbsp;month).</p>
       </div>
 
     </div>
@@ -263,7 +263,9 @@ if (location.hostname === "withpoise.app") {
     </div>
     <div class="qa">
       <h3>What does it cost?</h3>
-      <p>The first 14 days are free. After that, Poise is $5.99 a month or $34.99 a year, billed by Apple. Cancel in your iPhone's Settings anytime.</p>
+      <!-- The spaces inside "($2.92 a month)" are non-breaking here, and in the two launch-state price lines the whole
+           "$34.99 a year ($2.92 a month)" is, so a line never ends in the middle of the per-month figure (Nov 21, 2026). -->
+      <p>The first 14 days are free. After that, Poise is $5.99 a month or $34.99 a year ($2.92&nbsp;a&nbsp;month), billed by Apple. Cancel in your iPhone's Settings anytime.</p>
     </div>
     <div class="qa">
       <h3>What do I need?</h3>
@@ -276,7 +278,7 @@ if (location.hostname === "withpoise.app") {
     <h2>A moment before every message.</h2>
     <div class="cta cta-launch">
       <a class="badge" href="https://apps.apple.com/app/idAPPSTOREID"><img src="app-store-badge.svg" alt="Download on the App Store" width="156" height="52"></a>
-      <p class="fine">Free for 14 days, then $5.99 a month or $34.99 a year. Cancel anytime.</p>
+      <p class="fine">Free for 14 days, then $5.99 a month or $34.99&nbsp;a&nbsp;year&nbsp;($2.92&nbsp;a&nbsp;month). Cancel anytime.</p>
     </div>
   </section>
 
