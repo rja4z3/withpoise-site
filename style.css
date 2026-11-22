@@ -159,64 +159,27 @@ body[data-cta="soon"] .top-get { display: none; }
   margin: 0 0 0.85rem;
 }
 .fine { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-mid); max-width: 30em; text-wrap: pretty; }
-.cta-soon .fine { margin-top: 12px; }
 
 /* The How it works label as a section title (Randall, Oct 27: a bit bigger), in the serif, still clay and centred. */
 /* The group label over the four beats, in the same voice as the hero's Coming soon line: clay, the sans, 15px (Randall, Oct 29). */
 .beats .eyebrow.section-title { font-family: var(--sans); font-weight: 500; font-size: 18px; letter-spacing: 0.02em; }
 
 /* The first screen, as Randall chose it Oct 26 (variant B of two shown at his phone's width): no eyebrow,
-   no short rule, the sign-up grouped tight, and on a narrow screen the phone comes before the sign-up. */
+   no short rule, and on a narrow screen the phone comes before the call to action. The email sign-up box
+   came off on Nov 22, 2026, on his word; before launch the call to action is the Coming soon line alone. */
 .hero .soon::before { display: none; }
 .hero .cta-soon { margin-top: 30px; }
 .hero .soon { margin: 0 0 2px; }
-.hero .notify { margin-top: 10px; }
-.hero .notify .fine { margin-top: 0; }
 @media (max-width: 760px) {
   .hero { display: flex; flex-direction: column; gap: 0; }
   .hero-text { display: contents; }
   .hero h1 { order: 1; }
   .hero .lede { order: 2; }
   .hero .hero-phone { order: 3; margin: 48px auto 36px; }   /* outweighs the .hero-phone margin set further down */
-  .hero .cta { order: 4; margin-top: 0; align-self: stretch; }   /* the sign-up spans the width in both states (it centered itself in the thanks state by accident) */
-  /* On a phone the field takes the whole row and the button sits under it, full width, like the app's own
-     buttons (user-ruled Oct 28: beside the button the field showed about 26 characters and cut longer addresses). */
-  .notify { max-width: none; }
-  .notify input[type="email"] { flex: 1 1 100%; }
-  .notify button { flex: 1 1 100%; }
+  .hero .cta { order: 4; margin-top: 0; align-self: stretch; }   /* the call to action spans the width in both states */
 }
 .fine a, .more a, .qa a { color: var(--evergreen); text-decoration: underline; text-underline-offset: 3px; }
 .fine a:hover, .more a:hover, .qa a:hover { color: var(--clay); }
-/* The notify form, before launch: one field, one pill, the promise under them. */
-.notify { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; max-width: 30em; }
-.notify input[type="email"] {
-  flex: 1 1 220px; min-width: 0; height: 46px; padding: 0 18px;
-  border: 1px solid var(--line); border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55); color: var(--ink);
-  font: inherit; font-size: 16px;
-}
-.notify input::placeholder { color: var(--ink-faint); }
-.notify input:focus-visible { outline: 2px solid var(--moss); outline-offset: 2px; border-color: var(--moss); }
-.notify button {
-  height: 46px; padding: 0 22px; border: 0; border-radius: 999px;
-  background: var(--evergreen); color: #fff;
-  font: inherit; font-size: 15px; font-weight: 500; cursor: pointer;
-}
-.notify button:hover { background: var(--evergreen-deep); }
-.notify button:disabled { opacity: 0.7; cursor: default; }
-.notify button:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; }
-.notify .fine { flex-basis: 100%; margin: 2px 0 0; }
-/* The thanks takes the field's place: a soft green capsule the width of the field and button it replaces
-   (user-ruled Oct 28: the small gray line left the eye nowhere to land). */
-.notify .done {
-  display: block; width: 100%; box-sizing: border-box; margin: 0;
-  padding: 13px 20px; border-radius: 999px;
-  background: var(--mint-wash); color: var(--evergreen);
-  font-size: 16px; line-height: 1.4; text-align: center; text-wrap: balance;
-}
-.notify .trouble { color: var(--clay); }
-.notify .hp { position: absolute; left: -10000px; width: 1px; height: 1px; opacity: 0; }   /* the honeypot, off screen */
-.notify [hidden] { display: none; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .badge { display: inline-block; line-height: 0; text-decoration: none; }
 .badge img { height: 52px; width: auto; display: block; }
@@ -489,5 +452,4 @@ footer p a { color: inherit; text-decoration: none; }
   .shell, .beat-phone .shell { box-shadow: none; }   /* a blurred shadow prints as a gray slab */
   body::before, body.home::before, .screen .glow { display: none; }
   .top-get, .cta-launch { display: none; }
-  .notify input, .notify button { display: none; }   /* paper can't sign up; the promise line stays */
 }
