@@ -368,12 +368,15 @@ body[data-cta="soon"] .closing { display: none; }
 .closing .fine { margin-left: auto; margin-right: auto; max-width: 28em; }
 .home footer { margin-top: 0; padding: 28px 0 44px; }
 body[data-cta="soon"] .faq { padding-bottom: clamp(48px, 6vw, 80px); }
-/* One rhythm between the sections after the beats (Randall, Oct 27: the gaps around Private by default read uneven).
-   A beat's bottom padding plus a section's top padding is the gap between a beat and the next section; the same sum
-   is the gap between Private by default and The basics, so the private section carries a beat's bottom padding, not
-   the page-end padding the last section has. Its paragraph sits under its title at the same distance as the first
-   question sits under The basics. */
-body[data-cta="soon"] .faq.private, body[data-cta="launch"] .faq.private { padding-bottom: clamp(28px, 4vw, 56px); }
+/* The gaps around Private by default.
+   Oct 27 (Randall: the gaps around it read uneven): the gap under it was made the same as the gap over it, a beat's
+   bottom padding plus a section's top padding. Nov 25 (Randall: "the spacing between the privacy section and the
+   basics is too big"; by privacy he meant Private by default): that sum is right under a tall phone picture and too
+   much between two short blocks of text in one column (84 px on a phone, 154 px at 1280). The gap under it is now
+   about twice the heading's height: 56 px on a phone, up to 80 px on a wide screen. The private section has no
+   bottom padding of its own; the section after it carries the gap. */
+body[data-cta="soon"] .faq.private, body[data-cta="launch"] .faq.private { padding-bottom: 0; }
+.faq.private + .faq { padding-top: clamp(56px, 6vw, 80px); }
 .faq.private p { margin: 24px 0 0; }   /* 8 under the title plus 24 = 32, the first question's distance under The basics */
 
 /* ---------- Plain pages: privacy, terms, support ----------
