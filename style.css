@@ -377,7 +377,10 @@ body[data-cta="soon"] .faq { padding-bottom: clamp(48px, 6vw, 80px); }
    bottom padding of its own; the section after it carries the gap. */
 body[data-cta="soon"] .faq.private, body[data-cta="launch"] .faq.private { padding-bottom: 0; }
 .faq.private + .faq { padding-top: clamp(56px, 6vw, 80px); }
-.faq.private p { margin: 24px 0 0; }   /* 8 under the title plus 24 = 32, the first question's distance under The basics */
+.faq.private p { margin: 24px 0 0; }   /* 24 under the title (the title's own 8 collapses into it) */
+/* Nov 25 (Randall: "use 24"): the first question sits 24 px under The basics, as the paragraph sits under Private by
+   default. It sat 32 (the title's 8 plus the question's 24 of padding, which do not collapse). Home page only. */
+.home .faq h2 + .qa { padding-top: 16px; }
 
 /* ---------- Plain pages: privacy, terms, support ----------
    Same shell as the home page: the top row with the lockup (and Get Poise at launch) inside .wrap,
